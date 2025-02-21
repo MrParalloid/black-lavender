@@ -1,0 +1,502 @@
+
+/* 🎨 Force main accent color to Purple */
+body {
+    --accent-color: #7A36F6 !important;
+    --interactive-accent: #5B0BEF !important;
+}
+
+/* 🌙 DARK MODE - Fully transparent sidebar for a sleek look */
+.theme-dark {
+    --background-primary: rgba(0, 0, 0, 0.9) !important; 
+    --background-secondary: rgba(0, 0, 0, 0.7) !important;
+    --titlebar-background-focused: rgba(0, 0, 0, 0.8) !important; 
+
+    /* Handle transparent effects */
+    --background-modifier-border: rgba(255, 255, 255, 0.01);
+    --background-modifier-hover: rgba(255, 255, 255, 0.05); 
+    --background-modifier-active-hover: rgba(255, 255, 255, 0.15); 
+
+    backdrop-filter: blur(15px) !important;
+}
+
+/* ☀️ LIGHT MODE - Solid background for better readability */
+.theme-light {
+    --background-primary: #e7e4fb !important; 
+    --background-secondary: #d2cefb !important; 
+    --titlebar-background-focused: #d2cefb !important;
+    
+    --text-normal: #222222; 
+    --text-muted: #3e3e3e; 
+    --text-on-accent: #ffffff;
+
+    --tab-background-active: rgba(218, 247, 132, 0.9);
+    --tab-text-active: #3e3e3e;
+    --tab-text: #3e3e3e;
+    
+    /* Handle solid effects */
+    --background-modifier-border: rgba(0, 0, 0, 0.05); /* Softer borders */
+    --background-modifier-hover: rgba(0, 0, 0, 0.05); /* Subtle hover effect */
+    --background-modifier-active-hover: rgba(0, 0, 0, 0.05); /* Active hover */
+
+    backdrop-filter: none !important; /* Disable transparency */
+}
+
+
+/* ======================== */
+/*  📌 SELECT & HIGHLIGHT  */
+/* ======================= */
+
+
+
+::selection {
+    background: #daf784 !important; /* Highlight background */
+    color: #000 !important; /* Selected text color */
+}
+
+::-moz-selection { /* For Firefox */
+    background: #daf784 !important;
+    color: #000 !important;
+}
+
+::-webkit-selection { /* iOS and WebKit browsers */
+    background: #daf784 !important;
+    color: #000 !important;
+}
+
+.cm-selectionBackground, .HyperMD-selection-highlight {
+    background: #daf784 !important;
+    background-color: #daf784 !important;
+}
+
+
+/* Ensure selection works in Reading Mode */
+.markdown-preview-view ::selection {
+    background: #daf784 !important;
+    color: #000000 !important;
+}
+
+
+/* 🎨 Change default highlight color (== == syntax) */
+.markdown-preview-view mark,
+.cm-s-obsidian span.cm-highlight {
+    background-color: #6A21F5 !important; /* Purple highlight */
+    color: #ffffff !important; /* White text for contrast */
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+}
+
+/* 🖱️ Adjust highlighted links (Make them stand out) */
+mark a, 
+mark .internal-link, 
+mark .external-link, 
+.cm-s-obsidian span.cm-highlight a {
+    color: #ffffff !important; 
+}
+
+
+
+/* ===================== */
+/*      📌 DATAVIEW      */
+/* ===================== */
+
+/* Dataview column wrapping and coloring */
+ .table-view-table>tbody>tr>td { 
+    white-space: nowrap !important;
+}
+
+
+/* Styling for inline Dataview fields */
+
+.dataview.inline-field {
+  background-color: rgba(100, 100, 100, 0.20) !important;  /* Light background */
+  padding: 2px 2px !important;
+  border-radius: 4px !important;
+  font-size: 0.8em !important;
+  margin: 0 1px !important;
+}
+
+/* 🏷️ Dataview Table Header Styling */
+.table-view-th {
+    font-size: 1em !important;  /* Adjust size (default is often too large) */
+    font-weight: 500 !important;  /* Medium weight (default is often too bold) */
+    text-transform: none !important; /* Remove uppercase if applied */
+}
+
+
+
+
+/* ===================== */
+/*     📌 HEADINGS       */
+/* ===================== */
+
+/* Universal heading style for both Reading Mode and Live Preview */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header {
+  margin-bottom: 10px !important;
+  padding-bottom: 5px !important; /* Adjust as needed */
+  margin-top: 0px !important;     /* Removes extra space above headings */
+}
+
+/* Remove space between heading and the next paragraph */
+.markdown-preview-view h1 + p,
+.markdown-preview-view h2 + p,
+.markdown-preview-view h3 + p,
+.markdown-preview-view h4 + p,
+.markdown-preview-view h5 + p,
+.markdown-preview-view h6 + p,
+.markdown-source-view.mod-cm6 .HyperMD-header + .cm-line {
+  margin-top: 0px !important;
+}
+
+/* Adjustments for Print Mode */
+@media print {
+  p {
+    margin-top: 0px !important;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 10px !important;
+  }
+}
+
+
+.inline-title {
+    font-weight: 500 !important; 
+    font-size: 1.7em !important; /* Adjust size if needed */
+    color: var(--text-normal) !important; /* Ensure it follows theme text color */
+}
+
+/* 🔹 H1 Headings */
+h1, 
+.markdown-preview-view h1, 
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 {
+    font-weight: 500 !important; 
+    font-size: 1.7em !important;
+    color: var(--text-normal) !important;
+}
+
+/* 🔹 H2 Headings */
+h2, 
+.markdown-preview-view h2, 
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-2 {
+    font-weight: 500 !important;
+    font-size: 1.4em !important;
+    color: var(--text-normal) !important;
+}
+
+/* 🔹 H3 Headings */
+h3, 
+.markdown-preview-view h3, 
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-3 {
+    font-weight: 500 !important;
+    font-size: 1.3em !important;
+    color: var(--text-normal) !important;
+}
+
+/* 🔹 H4 Headings */
+h4, 
+.markdown-preview-view h4, 
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-4 {
+    font-weight: 500 !important;
+    font-size: 1.1em !important;
+    color: var(--text-normal) !important;
+}
+
+/* 🔹 H5 Headings */
+h5, 
+.markdown-preview-view h5, 
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-5 {
+    font-weight: 500 !important;
+    font-size: 1em !important;
+    color: var(--text-normal) !important;
+}
+
+
+
+/* ================ */
+/*    📌 EMBEDS     */
+/* ================ */
+
+/* Hide embed titles */
+.markdown-embed-title {
+  display: none !important;
+}
+
+/* Remove left border from embeds */
+.markdown-embed {
+  border-left: none !important;
+}
+
+
+
+/* ===================== */
+/* 📌 MENUS & DROPDOWNS */
+/* ===================== */
+
+/* CONTEXT MENUS (Right-click, settings dropdowns) */
+.menu {
+    animation: menu-fade-in 0.3s ease-in-out !important;
+}
+
+/* Fade-in effect */
+@keyframes menu-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================= */
+/* 📌 QUICK SWITCHER TRANSPARENCY */
+/* ============================= */
+
+/* 🌍 Default transparency settings for all platforms */
+.modal-container {
+    background-color: rgba(30, 30, 30, 0.35) !important; /* Less transparency */
+    backdrop-filter: blur(8px) !important; /* Soft blur for depth */
+}
+
+/* 🖥️ macOS - Slightly more transparent */
+@media not all and (max-width: 1366px) { 
+    .modal-container {
+        background-color: rgba(30, 30, 30, 0.55) !important; /* More transparent on macOS */
+        backdrop-filter: blur(5px) !important; /* More blur effect */
+    }
+}
+
+/* 📱 iOS & Android - Less transparency for better readability */
+@media (max-width: 768px) { /* Mobile Devices */
+    .modal-container {
+        background-color: rgba(30, 30, 30, 0.95) !important; /* Almost solid background */
+        backdrop-filter: blur(16px) !important; /* Less blur */
+    }
+}
+
+/* ============================= */
+/* 📌 QUICK SWITCHER ANIMATIONS  */
+/* ============================= */
+
+/* Smooth fade-in effect */
+.modal-container {
+    animation: fade-in-scale 0.3s ease-in-out !important;
+}
+
+@keyframes fade-in-scale {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* ========================= */
+/* 📌 OPENING & CLOSING TABS */
+/* ========================= */
+
+/* Fade-in new tabs (Reduced movement to avoid jumping) */
+.workspace-leaf { 
+    animation: tab-slide-in 0.2s ease-in-out !important;
+}
+
+/* Fade and slide effect */
+@keyframes tab-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-out closing tabs */
+.workspace-leaf.is-closing {
+    animation: tab-fade-out 0.3s ease-in-out !important;
+}
+
+/* Fade-out effect when closing */
+@keyframes tab-fade-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(15px); /* Reduced movement */
+    }
+}
+
+
+/* ===================== */
+/* 📌 FILE TREE EXPANSION */
+/* ===================== */
+
+/* Slow Down Folder Expanding (Ensure it doesn’t affect the workspace height) */
+.nav-folder-children {
+    transition: height 0.2s ease-in-out, opacity 0.2s ease-in-out !important;
+    overflow: hidden !important;
+}
+
+
+/* ======================= */
+/* 📌 FILE TREE SELECTION  */
+/* ======================= */
+
+
+/* 🎨 Highlight active (selected) file in the file tree */
+.nav-file-title.is-active {
+    background-color: #daf784 !important; /* Light green highlight */
+    color: #000000 !important; /* Ensure text remains readable */
+    border-radius: 0px !important; /* Rounded edges for smooth look */
+}
+
+/* 🎨 Highlight active (selected) folder in the file tree */
+.nav-folder-title.is-active {
+    background-color: #daf784 !important;
+    color: #000000 !important;
+    border-radius: 0px !important;
+}
+
+/* 🖱️ Change hover effect for files */
+.nav-file-title:hover {
+    background-color: rgba(218, 247, 132, 0.3) !important; /* Slightly transparent green */
+    border-radius: 0px !important;
+}
+
+/* 🖱️ Change hover effect for folders */
+.nav-folder-title:hover {
+    background-color: rgba(218, 247, 132, 0.3) !important;
+    border-radius: 0px !important;
+}
+
+
+/* 🎨 Change default highlight color (== == syntax) */
+.markdown-preview-view mark,
+.cm-s-obsidian span.cm-highlight {
+    background-color: #6A21F5 !important; /* Purple highlight */
+    color: #ffffff !important; /* White text for contrast */
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+}
+
+/* 🖱️ slight hover effect */
+.markdown-preview-view mark:hover,
+.cm-s-obsidian span.cm-highlight:hover {
+    background-color: #5A1BC5 !important; /* Slightly darker purple on hover */
+}
+
+
+/* ======================= */
+/*      📌 LINKS           */
+/* ======================= */
+
+/* 🔗 Remove underline from all normal links (internal & external) */
+a, .internal-link {
+    text-decoration: none !important;
+    color: var(--accent-color) !important; /* Use global accent color */
+}
+
+/* 🔗 Ensure no underline appears on hover */
+a:hover, .internal-link:hover {
+    text-decoration: none !important;
+    color: var(--interactive-accent) !important; /* Slightly different shade for interaction */
+}
+
+
+
+
+/* ======================= */
+/*      📌 ICONIZE         */
+/* ======================= */
+
+
+/* 🌙 Dark Mode - Set icons to a light color */
+.theme-dark .iconize-icon {
+    color: #daf784 !important; /* Light gray for contrast */
+}
+
+/* ☀️ Light Mode - Set icons to a dark color */
+.theme-light .iconize-icon {
+    color: #6a21f5 !important; /* Dark gray for better visibility */
+}
+
+
+
+/* ===================== */
+/*      📌 OTHER         */
+/* ===================== */
+
+/* Checklists without strikethrough */
+body {
+--checklist-done-decoration: none;
+}
+
+/* YouTube Embeds Wide */
+
+iframe[src*="youtu"] {
+    width: 100%;
+    height: 512px;
+    border-radius: 16px;
+}
+
+/* 🌙 Dark Mode - Make bold text white */
+.theme-dark strong, 
+.theme-dark b, 
+.theme-dark .cm-strong, 
+.theme-dark .markdown-preview-view strong {
+    color: #ffffff !important;
+}
+
+hr {
+    border: none; /* Remove default border */
+    height: 0.5px; /* Adjust thickness */
+    background-color: rgba(128, 128, 128, 0.3);
+    margin: 1.5em 0;
+}
+
+/* 🏷️ Code Syntax Styling */
+.theme-light {  
+        --code-normal: #4d4d4c;  
+        --code-comment: #7e7e7e;  
+        --code-punctuation: #4d4d4c;  
+        --code-tag: #ff79c6;  
+        --code-value: #79d4ff;  
+        --code-string: #50fa7b;  
+        --code-property: #f8f8b7;  
+        --code-function: #ff79c6;  
+        --code-keyword: #bd93f9;  
+        --code-important: #4d4d4c;  
+        }  
+          
+.theme-dark {  
+        --code-normal: #f8f8f2;  
+        --code-comment: #7e7e7e;  
+        --code-punctuation: #f8f8f2;  
+        --code-tag: #ff79c6;  
+        --code-value: #8be9fd;  
+        --code-string: #50fa7b;  
+        --code-property: #f1fa8c;  
+        --code-function: #ff79c6;  
+        --code-keyword: #bd93f9;  
+        --code-important: #f8f8f2;  
+        }
+        
+        
+/* A bit longer Animation on Mobiles */
+@media (max-width: 1000px) { 
+    .workspace-leaf, .modal-container, .menu, .suggestion-container, .nav-folder {
+        animation-duration: 0.5s !important;
+    }
+}
