@@ -82,9 +82,10 @@ a:hover, .internal-link:hover {
     color: var(--interactive-accent) !important;
 }
 
+/* Accented Text Selection */
 ::selection {
-    background: #daf784; /* Highlight background */
-    color: #000; /* Selected text color */
+    background: #daf784 !important;
+    color: #000 !important;
 }
 
 /* ======================== */
