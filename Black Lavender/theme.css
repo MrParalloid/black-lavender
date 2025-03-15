@@ -53,7 +53,7 @@
 /*  📌 Optimized Animations  */
 /* ======================== */
 
-.menu, .workspace-leaf, .modal-container {
+.menu, .workspace-leaf, .modal-container, .mobile-tab-switcher {
     animation: tab-slide-in 0.3s ease-in-out !important;
 }
 
