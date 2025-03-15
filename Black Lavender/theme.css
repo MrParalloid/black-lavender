@@ -1,15 +1,11 @@
 :root, body, body[class*="theme-accent"] {
     --accent-color: #7A36F6 !important;
-    --interactive-accent: #4809bf !important;
+    --interactive-accent: #5915d9 !important;
     --yellow-accent: #daf784 !important;
-    --interactive-accent: #4809bf !important;
+    --purple-accent: #6a21f5 !important;
     --accent-h: 260 !important;
     --accent-s: 90% !important;
     --accent-l: 60% !important;
-    .view-header-breadcrumb {
-        color: var(--accent-color);
-        font-weight: 600;
-    }
 }
 
 /* 🌙 DARK MODE */
@@ -49,12 +45,17 @@
     background-color: rgba(10, 10, 10, 0.5) !important;
 }
 
+.view-header-breadcrumb {
+        color: var(--accent-color);
+        font-weight: 600;
+}
+
 /* ========================= */
 /*  📌 Optimized Animations  */
 /* ======================== */
 
 .menu, .workspace-leaf, .modal-container, .mobile-tab-switcher {
-    animation: tab-slide-in 0.3s ease-in-out !important;
+    animation: tab-slide-in 0.2s ease-in-out !important;
 }
 
 @keyframes tab-slide-in {
@@ -154,7 +155,7 @@ mark .external-link,
 }
 
 .theme-light .iconize-icon {
-    color: #6a21f5 !important;
+    color: var(--purple-accent) !important;
 }
 
 /* 📌 Headings (Consistent & Readable) */
@@ -236,7 +237,6 @@ body {
 /* 📺 Optimize YouTube Embeds */
 iframe[src*="youtu"] {
     width: 100%;
-    height: 512px;
     border-radius: 12px;
 }
 
@@ -254,3 +254,30 @@ hr {
     background-color: rgba(128, 128, 128, 0.3);
     margin: 1.5em 0;
 }
+
+/* 🏷️ Code Syntax Styling */
+.theme-light {  
+    --code-normal: #4d4d4c;  
+    --code-comment: #7e7e7e;  
+    --code-punctuation: #4d4d4c;  
+    --code-tag: #ff79c6;  
+    --code-value: #79d4ff;  
+    --code-string: #50fa7b;  
+    --code-property: #5119ba;  
+    --code-function: #ff79c6;  
+    --code-keyword: #bd93f9;  
+    --code-important: #4d4d4c;  
+    }  
+          
+.theme-dark {  
+    --code-normal: #f8f8f2;  
+    --code-comment: #7e7e7e;  
+    --code-punctuation: #f8f8f2;  
+    --code-tag: #ff79c6;  
+    --code-value: #8be9fd;  
+    --code-string: #50fa7b;  
+    --code-property: #f1fa8c;  
+    --code-function: #ff79c6;  
+    --code-keyword: #bd93f9;  
+    --code-important: #f8f8f2;  
+    }
