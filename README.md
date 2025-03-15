@@ -1,5 +1,5 @@
-# Black Lavender 1.6
-Latest release: 2025-03-03
+# Black Lavender 1.7.2
+Latest release: 2025-03-15
 
 Some very cool color combination in this lightweight and minimal theme will make you smile while using it.
 Animations included!
