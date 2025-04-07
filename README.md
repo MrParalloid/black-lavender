@@ -1,5 +1,6 @@
-# Black Lavender 0.9
-Latest release: 2025-03-31
+# Black Lavender
+Version: 1.0
+Latest release: 2025-04-07
 
 Some very cool color combination in this lightweight and minimal theme will make you smile while using it.
 Animations included!
@@ -13,3 +14,5 @@ Animations included!
 - Smooth slide-in and fade animations for keyframes and menus - looks dope
 - Iconize default color is taken from the theme
 - Tab bars with a single tab are hidden by default for a cleaner look
+- Calendar customization
+- Daily Note Calendar customization
